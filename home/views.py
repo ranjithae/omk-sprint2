@@ -11,6 +11,14 @@ from django.contrib.auth.decorators import login_required
 from .forms import *
 from django.db.models import *
 
+
+
 def home(request):
-   return render(request, 'home/home.html',
-                 {'home': home})
+    return render(request, 'home/base.html',
+                  {'home': home})
+
+def About_Us(request):
+    return render(request, 'home/about.html',
+                  {'About_Us': About_Us})
+
+

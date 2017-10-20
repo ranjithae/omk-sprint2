@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+
 ]
 
 MIDDLEWARE = [
@@ -126,6 +127,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+#STATIC_ROOT = "C:/Python/OMK/home/static"
+
+PROJECT_ROOT = "C:/Python/OMK/home/"
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/'
+
+#STATICFILES_DIRS = (os.path.join(BASE_DIR,"static") ,)
+
+#STATICFILES_DIRS = (
+ #   os.path.join(PROJECT_ROOT, 'staticfiles'),)
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+
+

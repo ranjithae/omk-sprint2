@@ -16,6 +16,7 @@ class MentorForm(forms.ModelForm):
 class StudentForm(forms.ModelForm):
     class Meta:
          model = Student
-         fields = ('Student_id','Student_name','Student_email','Student_grade','Parents_email','Parents_phone','School','Mentor_email','Employee_email')
+         fields = ('Student_id','Student_name','Student_email','Student_grade',
+                   'Parents_email','Parents_phone','School','Men_email','Emp_email')
 
 
