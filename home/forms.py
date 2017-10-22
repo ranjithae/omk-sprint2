@@ -4,14 +4,14 @@ from .models import Employee, Mentor, Student
 class EmployeeForm(forms.ModelForm):
     class Meta:
          model = Employee
-         fields = ('Employee_name','Employee_phone','Employee_email')
+         fields = ('Employee_name','Employee_phone','Employee_Address', 'Employee_Id' )
 
 
 
 class MentorForm(forms.ModelForm):
     class Meta:
          model = Mentor
-         fields = ('Mentor_name','Mentor_phone','Mentor_email')
+         fields = ('Mentor_name','Mentor_phone','Mentor_Address' ,'Mentor_Sex' ,'Mentor_Id')
 
 class StudentForm(forms.ModelForm):
     class Meta:
