@@ -17,8 +17,8 @@ def home(request):
     return render(request, 'home/base.html',
                   {'home': home})
 
-def About_Us(request):
+def about(request):
     return render(request, 'home/about.html',
-                  {'About_Us': About_Us})
+                  {'about': about})
 
 
