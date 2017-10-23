@@ -22,3 +22,6 @@ def about(request):
                   {'about': about})
 
 
+def mentor(request):
+    return render(request, 'home/mentor.html',
+                  {'mentor': mentor})
