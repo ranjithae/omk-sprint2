@@ -47,11 +47,11 @@ def login_user(request):
         password = request.POST['password']
         user = authenticate(username=username, password=password)
         if user is not None:
-            if user.is_active:
+            if user.is_staff:
                 login(request, user)
-                return render(request, 'home/index.html')
+                return render(request, 'home/employeehome.html')
             else:
-                return render(request, 'home/login.html', {'error_message': 'Your account has been disabled'})
+                return render(request, 'home/index.html')
         else:
             return render(request, 'home/login.html', {'error_message': 'Invalid login'})
     return render(request, 'home/login.html')
@@ -69,7 +69,7 @@ def register(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return render(request, 'home/index.html')
+                return render(request, 'home/login.html')
     context = {
         "form": form,
     }

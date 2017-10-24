@@ -4,10 +4,10 @@ from django.contrib.auth.models import Permission, User
 
 class Employee(models.Model):
     Employee_name = models.CharField(max_length=50)
-    Employee_phone = models.CharField(max_length=50)
+    Employee_phone = models.CharField(max_length=10)
     #Employee_email = models.CharField(max_length=50)
-    Employee_Address= models.CharField(default='Omaha' ,max_length=500)
-    Employee_Id= models.CharField(max_length=10, default= '999')
+    Employee_Address= models.CharField(max_length=500)
+    Employee_Id= models.CharField(max_length=10)
 
     def __str__(self):
       return str(self.Employee_name)
@@ -16,10 +16,10 @@ class Employee(models.Model):
 class Mentor(models.Model):
     #Mentor_email = models.CharField(max_length=50)
     Mentor_name = models.CharField(max_length=50)
-    Mentor_phone = models.CharField(max_length=50)
-    Mentor_Address=models.CharField(default='Omaha',max_length=500)
-    Mentor_Sex=models.CharField(max_length=1, default='null')
-    Mentor_Id=models.CharField(max_length=10, default='999')
+    Mentor_phone = models.CharField(max_length=10)
+    Mentor_Address=models.CharField(max_length=500)
+    Mentor_Gender=models.CharField(max_length=1, default ='X')
+    Mentor_Id=models.CharField(max_length=10)
 #    student_count = models.IntegerField(max_digits=10) (we should do the hardcode in later sprint)
 
     def __str__(self):
@@ -33,14 +33,14 @@ class Student(models.Model):
      Parents_email= models.CharField(max_length=25)
      Parents_phone=models.CharField(max_length=15)
      School= models.CharField(max_length=50)
-     Men_email =models.ForeignKey(Mentor,related_name='Menemail')
-     Emp_email= models.ForeignKey(Employee, related_name='Empemail')
+     Men_name =models.ForeignKey(Mentor,related_name='Menemail')
+     Emp_name= models.ForeignKey(Employee, related_name='Empemail')
 
      def __str__(self):
-      return str(self.Men_email)
+      return str(self.Men_name)
 
      def __str__(self):
-       return str(self.Emp_email)
+       return str(self.Emp_name)
 
 class Appointment(models.Model):
     Sname = models.ForeignKey(Student, related_name='Appointment')

@@ -12,13 +12,13 @@ class EmployeeForm(forms.ModelForm):
 class MentorForm(forms.ModelForm):
     class Meta:
          model = Mentor
-         fields = ('Mentor_name','Mentor_phone','Mentor_Address' ,'Mentor_Sex' ,'Mentor_Id')
+         fields = ('Mentor_name','Mentor_phone','Mentor_Address' ,'Mentor_Gender' ,'Mentor_Id')
 
 class StudentForm(forms.ModelForm):
     class Meta:
          model = Student
          fields = ('Student_id','Student_name','Student_email','Student_grade',
-                   'Parents_email','Parents_phone','School','Men_email','Emp_email')
+                   'Parents_email','Parents_phone','School','Men_name','Emp_name',)
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput)

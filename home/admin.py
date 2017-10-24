@@ -6,17 +6,17 @@ from .models import Employee, Mentor, Student
 
 class EmployeeList(admin.ModelAdmin):
     list_display = ('Employee_name', 'Employee_phone', 'Employee_Address', 'Employee_Id')
-    search_fields = ('Employee_name', 'Employee_email','Employee_Id')
+    search_fields = ('Employee_name', 'Employee_phone','Employee_Id')
 
 
 class MentorList(admin.ModelAdmin):
-    list_display = ('Mentor_name', 'Mentor_phone', 'Mentor_Id','Mentor_Address','Mentor_Sex')
-    search_fields = ('Mentor_name', 'Mentor_email','Mentor_Id')
+    list_display = ('Mentor_name', 'Mentor_phone', 'Mentor_Id','Mentor_Address','Mentor_Gender')
+    search_fields = ('Mentor_name', 'Mentor_phone','Mentor_Id')
 
 class StudentList(admin.ModelAdmin):
-    list_display = ('Student_id', 'Student_name', 'Student_email', 'Parents_email',
-                    'Parents_phone', 'School', 'Men_email','Emp_email')
-    search_fields = ('Student_name', 'Mentor_email', 'Student_id', 'School')
+    list_display = ('Student_id', 'Student_name', 'Student_email', 'Student_grade','Parents_email',
+                    'Parents_phone', 'School', 'Men_name','Emp_name')
+    search_fields = ('Student_name', 'Student_id', 'School' ,'Parents_phone',)
 
 admin.site.register(Employee,EmployeeList )
 admin.site.register(Mentor,MentorList)
