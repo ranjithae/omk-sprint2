@@ -1,5 +1,5 @@
-{% load staticfiles %}
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -29,21 +29,21 @@
             <div class="inner">
               <h3 class="masthead-brand">OMK</h3>
               <nav class="nav nav-masthead">
-                <a class="nav-link active" href="{% url 'home:base' %}">Home</a>
-                <a class="nav-link" href="#">About_Us</a>
+                <a class="nav-link active" href="#">Home</a>
+                <a class="nav-link" href="{% url 'home:about' %}">About Us</a>
                 <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="{% url 'home:register' %}">Register</a>
+                <a class="nav-link" href="{% url 'home:login_user' %}">Login</a>
               </nav>
             </div>
           </header>
-          <h1> Omaha Mentor for Kids is a non profit organization that helps in guiding students to stay focused on studies.</h1>
 
 
 
-            <footer class="mastfoot">
-            <div class="inner">
-              <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+              {% block body %}
+              {% endblock %}
             </div>
-          </footer>
+
 
         </div>
 
