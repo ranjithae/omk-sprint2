@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="javascript"></script>
@@ -20,7 +20,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
-	
+
   $( function() {
     $( "#datepicker" ).datepicker();
   } );
@@ -28,6 +28,7 @@
 
 </head>
 <body>
+
 <div class="site-wrapper">
 
       <div class="site-wrapper-inner">
@@ -35,23 +36,26 @@
         <div class="cover-container">
  <header class="masthead clearfix">
             <div class="inner">
+			 <div style="background:transparent !important" class="jumbotron text-center">
               <h3 class="masthead-brand">OMK</h3>
               <nav class="nav nav-masthead">
                 <a class="nav-link active" href="#">Home</a>
                 <a class="nav-link" href="#">Mentor</a>
-                <a class="nav-link" href="#">Employee</a>
+                <a class="nav-link" href="{#}">Employee</a>
                 <a class="nav-link" href="{% url 'home:about' %}">About Us</a>
                 <a class="nav-link" href="#">Contact</a>
               </nav>
+			  </div>
             </div>
           </header>
 		  </div>
 
       </div>
 
-    </div>
+
+</div>
 <nav class="navbar navbar-default sidebar" role="navigation">
-    <div class="container-fluid">
+
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
@@ -67,9 +71,16 @@
                 <li ><a href="#">Students Reports </a></li>
                 <li ><a href="#">Create Appointments</a></li>
                 <li ><a href="#">Home</a></li>
-                
+
             </ul>
-        </div>
+
     </div>
 </nav>
+<div class="container">
+  <h3>Search Students here</h3>
+  <form class="form-wrapper">
+  <input type="text" id="search" placeholder="Search for..." required>
+  <input type="submit" value="Go" id="submit">
+  </form>
+</div>
 </body>

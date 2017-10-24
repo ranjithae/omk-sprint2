@@ -30,8 +30,10 @@
               <h3 class="masthead-brand">OMK</h3>
               <nav class="nav nav-masthead">
                 <a class="nav-link active" href="{% url 'home:base' %}">Home</a>
-                <a class="nav-link" href="#">About_Us</a>
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="{% url 'home:about' %}">About Us</a>
+                <a class="nav-link" href="">Contact</a>
+                <a class="nav-link" href="{% url 'home:register' %}">Register</a>
+                <a class="nav-link" href="{% url 'home:login_user' %}">Login</a>
               </nav>
             </div>
           </header>
@@ -39,9 +41,9 @@
 
 
 
-            <footer class="mastfoot">
+             <footer class="mastfoot">
             <div class="inner">
-              <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+              <p>Contact Us at  <a href="omkidsorg@gmail.com">omkidsorg@gmail.com </a>.</p>
             </div>
           </footer>
 
