@@ -38,7 +38,7 @@ if DEBUG:
     EMAIL_USE_TLS = True
     DEFAULT_FROM_EMAIL = 'omkidsorg@gmail.com'
 
-ALLOWED_HOSTS = ['127.0.0.1']
+#ALLOWED_HOSTS = ['*']
 
 try:
     from .local_settings import *

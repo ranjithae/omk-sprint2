@@ -10,7 +10,8 @@ regex=r'[0-9]'
 
 class Employee(models.Model):
     Employee_name = models.CharField(max_length=50)
-    Employee_phone = models.CharField(max_length=50)
+    Employee_phone = models.CharField(max_length=10, validators=[MinLengthValidator(10), RegexValidator(regex)],
+                                      help_text="Phone Number should be 10 digits")
     Employee_email = models.EmailField(max_length=200)
     Employee_Address= models.CharField(max_length=200)
     Employee_Id= models.CharField(max_length=10)
@@ -22,9 +23,9 @@ class Employee(models.Model):
 class Mentor(models.Model):
     Mentor_email = models.EmailField(max_length=49, default='X@gmail.com')
     Mentor_name = models.CharField(max_length=49)
-    Mentor_phone = models.CharField(max_length=12, validators=[MinLengthValidator(12), RegexValidator(regex)],
+    Mentor_phone = models.CharField(max_length=10, validators=[MinLengthValidator(10), RegexValidator(regex)],
                                     help_text="Phone Number should be 10 digits")
-    Mentor_Address=models.CharField(max_length=49)
+    Mentor_Address=models.CharField(max_length=200)
     Mentor_Gender=models.CharField(max_length=10, default ='X' ,help_text="Enter F or M")
     Mentor_Id=models.CharField(max_length=10)
 #    student_count = models.IntegerField(max_digits=10) (we should do the hardcode in later sprint)
