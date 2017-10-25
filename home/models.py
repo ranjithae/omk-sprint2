@@ -37,7 +37,7 @@ class Student(models.Model):
      Student_name=models.CharField(max_length=49)
      Student_email = models.EmailField(max_length=25, default='X@gmail.com')
      Student_grade = models.CharField(max_length=10)
-     Parents_email = models.EmailField(max_length=25, default='X@gmail.com')
+     Parents_email = models.EmailField(max_length=200, default='X@gmail.com')
      Parents_phone = models.CharField(validators=[MinLengthValidator(10), RegexValidator(regex)], max_length=10)
      School= models.CharField(max_length=49)
      Men_name =models.ForeignKey(Mentor,related_name='Menemail')
