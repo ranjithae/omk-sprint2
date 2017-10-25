@@ -25,7 +25,7 @@ class Mentor(models.Model):
     Mentor_phone = models.CharField(max_length=12, validators=[MinLengthValidator(12), RegexValidator(regex)],
                                     help_text="Phone Number should be 10 digits")
     Mentor_Address=models.CharField(max_length=49)
-    Mentor_Gender=models.CharField(max_length=49, default ='X' ,help_text="Enter F or M")
+    Mentor_Gender=models.CharField(max_length=10, default ='X' ,help_text="Enter F or M")
     Mentor_Id=models.CharField(max_length=10)
 #    student_count = models.IntegerField(max_digits=10) (we should do the hardcode in later sprint)
 
@@ -33,7 +33,7 @@ class Mentor(models.Model):
        return str(self.Mentor_name)
 
 class Student(models.Model):
-     Student_id= models.CharField(max_length=15);
+     Student_id= models.CharField(max_length=15)
      Student_name=models.CharField(max_length=49)
      Student_email = models.EmailField(max_length=25, default='X@gmail.com')
      Student_grade = models.CharField(max_length=10)
