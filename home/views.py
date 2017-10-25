@@ -51,11 +51,10 @@ def login_user(request):
                 login(request, user)
                 return render(request, 'home/employee.html')
             else:
-                return render(request, 'home/index.html')
+                return render(request, 'home/index1.html')
         else:
             return render(request, 'home/login.html', {'error_message': 'Invalid login'})
     return render(request, 'home/login.html')
-
 
 def register(request):
     form = UserForm(request.POST or None)

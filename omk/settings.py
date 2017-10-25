@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-
+import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -23,6 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'bz=xn0cf0ra=ias6o=u&6l^@2!d=+jb*y49v)k!=m9u2d9o_h-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+ALLOWED_HOSTS = ['*']
+
+
 DEBUG = True
 
 if DEBUG:
@@ -35,6 +40,10 @@ if DEBUG:
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
+try:
+    from .local_settings import *
+except ImportError:
+    pass
 
 # Application definition
 
@@ -84,8 +93,12 @@ WSGI_APPLICATION = 'omk.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd3m8e6eo93i3ff',
+        'USER': 'epagewdhjgwilh',
+        'PASSWORD': 'cfa91ce7ccebd83a9894b204b4dc707a5e3caa0c1c4fd48aa3eb678722dc7745',
+        'HOST': 'ec2-54-243-47-252.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -128,10 +141,10 @@ USE_TZ = True
 
 #STATIC_ROOT = "C:/Python/OMK/home/static"
 
-PROJECT_ROOT = "C:/Python/OMK/home/"
+#PROJECT_ROOT = "C:/Python/OMK/home/"
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-STATIC_URL = '/static/'
+#STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+#STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/'
 
@@ -139,8 +152,24 @@ LOGIN_REDIRECT_URL = '/'
 
 #STATICFILES_DIRS = (
  #   os.path.join(PROJECT_ROOT, 'staticfiles'),)
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
+
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
+# Update database configuration with $DATABASE_URL.
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 

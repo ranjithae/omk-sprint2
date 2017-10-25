@@ -10,10 +10,9 @@ regex=r'[0-9]'
 
 class Employee(models.Model):
     Employee_name = models.CharField(max_length=50)
-    Employee_phone = models.CharField(max_length=10, validators=[MinLengthValidator(10), RegexValidator(regex)],
-                                      help_text="Phone Number should be 10 digits")
-    Employee_email = models.EmailField(max_length=50, default='X@gmail.com')
-    Employee_Address= models.CharField(max_length=500)
+    Employee_phone = models.CharField(max_length=50)
+    Employee_email = models.EmailField(max_length=200)
+    Employee_Address= models.CharField(max_length=200)
     Employee_Id= models.CharField(max_length=10)
 
     def __str__(self):
@@ -21,12 +20,12 @@ class Employee(models.Model):
 
 
 class Mentor(models.Model):
-    Mentor_email = models.EmailField(max_length=50, default='X@gmail.com')
-    Mentor_name = models.CharField(max_length=50)
-    Mentor_phone = models.CharField(max_length=10, validators=[MinLengthValidator(10), RegexValidator(regex)],
+    Mentor_email = models.EmailField(max_length=49, default='X@gmail.com')
+    Mentor_name = models.CharField(max_length=49)
+    Mentor_phone = models.CharField(max_length=12, validators=[MinLengthValidator(12), RegexValidator(regex)],
                                     help_text="Phone Number should be 10 digits")
-    Mentor_Address=models.CharField(max_length=500)
-    Mentor_Gender=models.CharField(max_length=1, default ='X' ,help_text="Enter F or M")
+    Mentor_Address=models.CharField(max_length=49)
+    Mentor_Gender=models.CharField(max_length=49, default ='X' ,help_text="Enter F or M")
     Mentor_Id=models.CharField(max_length=10)
 #    student_count = models.IntegerField(max_digits=10) (we should do the hardcode in later sprint)
 
@@ -34,13 +33,13 @@ class Mentor(models.Model):
        return str(self.Mentor_name)
 
 class Student(models.Model):
-     Student_id= models.CharField(max_length=15)
-     Student_name=models.CharField(max_length=50)
+     Student_id= models.CharField(max_length=15);
+     Student_name=models.CharField(max_length=49)
      Student_email = models.EmailField(max_length=25, default='X@gmail.com')
-     Student_grade = models.CharField(max_length=2, default='F')
+     Student_grade = models.CharField(max_length=10)
      Parents_email = models.EmailField(max_length=25, default='X@gmail.com')
      Parents_phone = models.CharField(validators=[MinLengthValidator(10), RegexValidator(regex)], max_length=10)
-     School= models.CharField(max_length=50)
+     School= models.CharField(max_length=49)
      Men_name =models.ForeignKey(Mentor,related_name='Menemail')
      Emp_name= models.ForeignKey(Employee, related_name='Empemail')
      created_date = models.DateTimeField(default=timezone.now)

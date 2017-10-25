@@ -34,4 +34,4 @@ urlpatterns = [
         auth_views.password_reset_confirm, name='password_reset_confirm'),
     url(r'^reset/done/$', auth_views.password_reset_complete, name='password_reset_complete'),
 
-    ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    ]
