@@ -1,4 +1,4 @@
-{% extends 'home/base_visitor.html' %}
+{% extends 'home/baselogin.html' %}
 {% block title %}Log In{% endblock %}
 {% block login_active %}active{% endblock %}
 
@@ -37,9 +37,6 @@
                             </div>
                         </div>
                     </form>
-                </div>
-                <div class="panel-footer">
-                    Don't have an account? <a href="{% url 'home:register' %}">Click here</a> to register.
                 </div>
                 <div class="panel-footer">
                     <a href="{% url 'password_reset' %}"> Reset Password</a> here.

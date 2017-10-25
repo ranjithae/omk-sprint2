@@ -27,11 +27,11 @@ DEBUG = True
 
 if DEBUG:
     EMAIL_HOST = 'smtp.gmail.com'
-    EMAIL_HOST_USER = 'vbhat0811@gmail.com  '
-    EMAIL_HOST_PASSWORD = 'zsdnamwvdteodwnq'
+    EMAIL_HOST_USER = 'omkidsorg@gmail.com '
+    EMAIL_HOST_PASSWORD = 'Python@123'
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
-    DEFAULT_FROM_EMAIL = 'vbhat0811@gmail.com'
+    DEFAULT_FROM_EMAIL = 'omkidsorg@gmail.com'
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
@@ -39,14 +39,13 @@ ALLOWED_HOSTS = ['127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
-
+    'django.contrib.admin',
 ]
 
 MIDDLEWARE = [
