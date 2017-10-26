@@ -56,7 +56,7 @@ def login_user(request):
                 return render(request, 'home/employee.html')
             else:
                 login(request, user)
-                return render(request, 'home/index1.html')
+                return render(request, 'home/index.html')
         else:
             return render(request, 'home/login.html', {'error_message': 'Invalid login'})
     return render(request, 'home/login.html')
