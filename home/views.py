@@ -32,6 +32,10 @@ def index(request):
     return render(request, 'home/index.html',
                   {'index': index})
 
+def empindex(request):
+    return render(request, 'home/employee.html',
+                  {'empindex': empinde })
+
 def logout_user(request):
     logout(request)
     form = UserForm(request.POST or None)
@@ -51,6 +55,7 @@ def login_user(request):
                 login(request, user)
                 return render(request, 'home/employee.html')
             else:
+                login(request, user)
                 return render(request, 'home/index1.html')
         else:
             return render(request, 'home/login.html', {'error_message': 'Invalid login'})
