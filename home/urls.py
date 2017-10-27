@@ -13,10 +13,14 @@ urlpatterns = [
     url(r'^login_user/$', views.login_user, name='login_user'),
     url(r'^logout_user/$', views.logout_user, name='logout_user'),
     url(r'^index/$', views.index, name='index'),
-    url(r'^employee/$', views.empindex, name='empindex'),
+    url(r'^empindex/$', views.empindex, name='empindex'),
+    url(r'^emphome/$', views.emphome, name='emphome'),
     url(r'^mentorhome/$', views.mentorhome, name='mentorhome'),
     url(r'^markattendance/$', views.markattendance, name='markattendance'),
     url(r'^studentsreports/$', views.studentsreports, name='studentsreports'),
     url(r'^createappointments/$', views.createappointments, name='createappointments'),
-
+    url(r'^empmarkattendance/$', views.empmarkattendance, name='empmarkattendance'),
+    url(r'^empstudentsreports/$', views.empstudentsreports, name='empstudentsreports'),
+    url(r'^empcreateappointments/$', views.empcreateappointments, name='empcreateappointments'),
+    url(r'^mentorlist/$', views.mentorlist, name='mentorlist'),
     ]

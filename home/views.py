@@ -33,8 +33,12 @@ def index(request):
                   {'index': index})
 
 def empindex(request):
-    return render(request, 'home/employee.html',
-                  {'empindex': empinde })
+    return render(request, 'home/empindex.html',
+                  {'empindex': empindex})
+
+def emphome(request):
+    return render(request, 'home/emphome.html',
+                  {'emphome': emphome})
 
 def mentorhome(request):
     return render(request, 'home/mentorhome.html',
@@ -51,6 +55,22 @@ def studentsreports(request):
 def createappointments(request):
     return render(request, 'home/createappointments.html',
                   {'createappointments': createappointments})
+
+def empmarkattendance(request):
+    return render(request, 'home/empmarkattendance.html',
+                  {'empmarkattendance': empmarkattendance})
+
+def empstudentsreports(request):
+    return render(request, 'home/empstudentsreports.html',
+                  {'empstudentsreports': empstudentsreports})
+
+def empcreateappointments(request):
+    return render(request, 'home/empcreateappointments.html',
+                  {'empcreateappointments': empcreateappointments})
+
+def mentorlist(request):
+    return render(request, 'home/mentorlist.html',
+                  {'mentorlist': mentorlist})
 
 def logout_user(request):
     logout(request)
@@ -69,7 +89,7 @@ def login_user(request):
         if user is not None:
             if user.is_staff:
                 login(request, user)
-                return render(request, 'home/employee.html')
+                return render(request, 'home/emphome.html')
             else:
                 login(request, user)
                 return render(request, 'home/mentorhome.html')
