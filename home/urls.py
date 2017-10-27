@@ -14,5 +14,9 @@ urlpatterns = [
     url(r'^logout_user/$', views.logout_user, name='logout_user'),
     url(r'^index/$', views.index, name='index'),
     url(r'^employee/$', views.empindex, name='empindex'),
+    url(r'^mentorhome/$', views.mentorhome, name='mentorhome'),
+    url(r'^markattendance/$', views.markattendance, name='markattendance'),
+    url(r'^studentsreports/$', views.studentsreports, name='studentsreports'),
+    url(r'^createappointments/$', views.createappointments, name='createappointments'),
 
     ]

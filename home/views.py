@@ -36,6 +36,22 @@ def empindex(request):
     return render(request, 'home/employee.html',
                   {'empindex': empinde })
 
+def mentorhome(request):
+    return render(request, 'home/mentorhome.html',
+                  {'mentorhome': mentorhome})
+
+def markattendance(request):
+    return render(request, 'home/markattendance.html',
+                  {'markattendance': markattendance})
+
+def studentsreports(request):
+    return render(request, 'home/studentsreports.html',
+                  {'studentsreports': studentsreports})
+
+def createappointments(request):
+    return render(request, 'home/createappointments.html',
+                  {'createappointments': createappointments})
+
 def logout_user(request):
     logout(request)
     form = UserForm(request.POST or None)
@@ -56,7 +72,7 @@ def login_user(request):
                 return render(request, 'home/employee.html')
             else:
                 login(request, user)
-                return render(request, 'home/index.html')
+                return render(request, 'home/mentorhome.html')
         else:
             return render(request, 'home/login.html', {'error_message': 'Invalid login'})
     return render(request, 'home/login.html')
@@ -98,5 +114,5 @@ def password_reset_complete(request):
 
 def Student_list(request):
     Student_list = Student.objects.filter(created_date__lte=timezone.now())
-    return render(request, 'home/index.html',
+    return render(request, 'home/mentorhome.html',
     {'home': Student_list})
