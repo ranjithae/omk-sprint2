@@ -1,5 +1,62 @@
-{% extends 'home/index.html' %}
+{% extends 'home/empindex.html' %}
 {% block content %}
 
 <p> This is Employee mark attendance Page</p>
+<div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Mark Attendance</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Grade</th>
+                  <th>Attendance</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr> <td>
+                        <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                        </label>
+                  </td></tr>
+              {% for Student_list in home %}
+                <tr>
+                  <td>{{ Student_list.Student_name }}</td>
+                  <td>{{ Student_list.Student_grade }}</td>
+                  <td>
+                        <label class="switch">
+                        <input id="toggle-slider_position()" type="checkbox">
+                        <span class="slider round"></span>
+                        </label>
+                  </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+                <div class="container">
+                    <div class="row">
+                        <div class='col-sm-6'>
+                        <div class="form-group">
+                            <div class='input-group date' id='datetimepicker1'>
+                                <input type='text' class="form-control" />
+                                 <span class="input-group-addon">
+                                 <span class="glyphicon glyphicon-calendar"></span>
+                                 </span>
+                             </div>
+                        </div>
+                         </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+    </div>
+</div>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
 {% endblock %}

@@ -56,6 +56,14 @@ def createappointments(request):
     return render(request, 'home/createappointments.html',
                   {'createappointments': createappointments})
 
+def mentordashboard(request):
+    return render(request, 'home/mentordashboard.html',
+                  {'mentordashboard': mentordashboard})
+
+def mentortask(request):
+    return render(request, 'home/mentortask.html',
+                  {'mentortask': mentortask})
+
 def empmarkattendance(request):
     return render(request, 'home/empmarkattendance.html',
                   {'empmarkattendance': empmarkattendance})
@@ -67,6 +75,14 @@ def empstudentsreports(request):
 def empcreateappointments(request):
     return render(request, 'home/empcreateappointments.html',
                   {'empcreateappointments': empcreateappointments})
+
+def empdashboard(request):
+    return render(request, 'home/empdashboard.html',
+                  {'empdashboard': empdashboard})
+
+def emptask(request):
+    return render(request, 'home/emptask.html',
+                  {'emptask': emptask})
 
 def mentorlist(request):
     return render(request, 'home/mentorlist.html',
