@@ -2,9 +2,17 @@
 {% block content %}
 
 <p> This is Employee mark attendance Page</p>
-<div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-table"></i> Mark Attendance</div>
+<div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#"></a>
+        </li>
+        <li class="breadcrumb-item active">Mark Attendance</li>
+      </ol>
+
+<div>
+
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -35,28 +43,30 @@
                 </tr>
               {% endfor %}
               </tbody>
-                <div class="container">
-                    <div class="row">
-                        <div class='col-sm-6'>
-                        <div class="form-group">
-                            <div class='input-group date' id='datetimepicker1'>
-                                <input type='text' class="form-control" />
-                                 <span class="input-group-addon">
-                                 <span class="glyphicon glyphicon-calendar"></span>
-                                 </span>
-                             </div>
-                        </div>
-                         </div>
-        <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker1').datetimepicker();
-            });
-        </script>
-    </div>
-</div>
+
             </table>
+
+
+
           </div>
+            <br/>
+            <div class="row" >
+                        <div class="col-sm-5"></div>
+                            <div class='col-sm-3'>
+                                <div class="form-group">
+                                    <div class='input-group date' id='datetimepicker1'>
+                                        <input type='text' class="form-control" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-sm-4"></div>
+                        </div>
+            <br/><br/><br/><br/><br/>
         </div>
-        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+
       </div>
+</div>
 {% endblock %}

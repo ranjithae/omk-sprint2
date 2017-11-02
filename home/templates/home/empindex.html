@@ -11,23 +11,27 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css"/>
-  <link rel="stylesheet" href="{% static 'css/vendor/bootstrap/css/bootstrap.min.css' %}">
-  <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> -->
-  <!--<link href="{% static 'css/style.css' %}" rel="stylesheet">-->
-  <!--<link rel="stylesheet" type="text/css" href="style.css"> -->
-  <link href="{% static 'css/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-  <!-- Page level plugin CSS-->
-  <link href="{% static 'css/vendor/datatables/dataTables.bootstrap4.css' %}" rel="stylesheet">
-  <!-- Custom styles for this template-->
-  <link href="{% static 'css/sb-admin.css' %}" rel="stylesheet">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+  <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> -->
+  <!--<link href="{% static 'css/style.css' %}" rel="stylesheet">-->
+  <!--<link rel="stylesheet" type="text/css" href="style.css"> -->
+  <link href="{% static 'css/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="{% static 'css/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"/>
+  <!-- Page level plugin CSS-->
+  <link href="{% static 'css/vendor/datatables/dataTables.bootstrap4.css' %}" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="{% static 'css/sb-admin.css' %}" rel="stylesheet">
+            <script type="text/javascript">
+              $( function() {
+                  $("#datetimepicker1").datetimepicker();
+              });
+                            </script>
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 {% if user.is_authenticated %}
@@ -108,6 +112,7 @@
             </div>
           </form>
         <li class="nav-item"> <button class="btn btn-dark" type="button"> Hello {{user.username}} </button> </li>
+        </li>
         <li class="nav-item">
           <a class="nav-link"   href="{% url 'home:logout_user' %}">
             <i class="fa fa-fw fa-sign-out" ></i>Logout</a>
@@ -160,10 +165,12 @@
     <!-- Page level plugin JavaScript-->
     <script src="{% static 'css/vendor/datatables/jquery.dataTables.js' %}"></script>
     <script src="{% static 'css/vendor/datatables/dataTables.bootstrap4.js' %}"></script>
+
     <!-- Custom scripts for all pages-->
     <script src="{% static 'js/sb-admin.min.js' %}"></script>
     <!-- Custom scripts for this page-->
     <script src="{% static 'js/sb-admin-datatables.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 
   </div>
 {% endif %}
