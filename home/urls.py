@@ -19,12 +19,10 @@ urlpatterns = [
     url(r'^markattendance/$', views.markattendance, name='markattendance'),
     url(r'^studentsreports/$', views.studentsreports, name='studentsreports'),
     url(r'^createappointments/$', views.createappointments, name='createappointments'),
-    url(r'^mentordashboard/$', views.mentordashboard, name='mentordashboard'),
     url(r'^mentortask/$', views.mentortask, name='mentortask'),
     url(r'^empmarkattendance/$', views.empmarkattendance, name='empmarkattendance'),
     url(r'^empstudentsreports/$', views.empstudentsreports, name='empstudentsreports'),
     url(r'^empcreateappointments/$', views.empcreateappointments, name='empcreateappointments'),
     url(r'^mentorlist/$', views.mentorlist, name='mentorlist'),
-    url(r'^empdashboard/$', views.empdashboard, name='empdashboard'),
     url(r'^emptask/$', views.emptask, name='emptask'),
     ]
